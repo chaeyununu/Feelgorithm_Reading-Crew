@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Feelgorithm 로고 생성</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+  <style>
+body.result-shown {
+  justify-content: flex-start;
+}
+    html, body {
+      margin: 0; padding: 0;
+      width: 100%; height: 100%;
+    }
+    body {
+      display: flex;
+      flex-direction: column;    
+      justify-content: center;   
+      align-items: center;        
+      background: black;
+      color: white;
+      font-family: sans-serif;
+      text-align: center;
+    }
+
+   
+    main,
+    #canvas-container {
+      width: 800px;               
+      max-width: 90%;            
+      box-sizing: border-box;
+    }
+
+    #canvas-container {
+      display: none;
+      margin-top: 20px;          
+    }
+
+    canvas {
+      display: block;
+      width: 100%;               
+      height: auto;
+    }
+
+    .screen { display: none; }
+    .screen.active { display: block; }
+
+    .screen label,
+    .screen p {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    #nameInput {
+      width: 100%;
+      padding: 12px 16px;
+      font-size: 1.5rem;
+      border-radius: 8px;
+      border: none;
+      margin-bottom: 24px;
+    }
+
+    main button {
+      display: block;
+      width: 100%;
+      padding: 16px 0;
+      margin: 12px 0;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #fff;
+      background-color: #f06f80;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition:
+        background-color 0.5s ease,
+        border-radius      1.0s ease,
+        transform          0.1s ease;
+    }
+    main button:hover {
+      background-color: #F0F000;
+    }
+    main button:active {
+      border-radius: 5px;
+      transform: scale(0.97);
+      transition:
+        background-color 0.2s ease,
+        border-radius      1.0s ease,
+        transform          0.1s ease;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div id="step1" class="screen active">
+      <label for="nameInput">이름을 입력하세요.</label>
+      <input type="text" id="nameInput" placeholder="이름"/>
+      <button id="nameBtn">다음</button>
+    </div>
+    <div id="step2" class="screen">
+      <p>어떤 방식으로 토론에 참여하나요?</p>
+      <button class="styleBtn" data-style="listener">조용히 경청하는 편</button>
+      <button class="styleBtn" data-style="emotional">감성적으로 표현</button>
+      <button class="styleBtn" data-style="logical">논리적으로 정리</button>
+      <button class="styleBtn" data-style="idea">아이디어 중심으로 제안</button>
+    </div>
+    <div id="step3" class="screen">
+      <p>요즘 관심 있는 책 주제는?</p>
+      <button class="topicBtn" data-topic="science">과학</button>
+      <button class="topicBtn" data-topic="literature">문학</button>
+      <button class="topicBtn" data-topic="art">예술</button>
+      <button class="topicBtn" data-topic="philosophy">철학</button>
+      <button class="topicBtn" data-topic="psychology">심리학</button>
+    </div>
+    <div id="step4" class="screen">
+      <p>"리딩 크루"의 분위기는 어땠나요?</p>
+      <button class="moodBtn" data-mood="calm">잔잔했어요</button>
+      <button class="moodBtn" data-mood="free">자유롭게 이야기했어요</button>
+      <button class="moodBtn" data-mood="energetic">에너지가 넘쳤어요</button>
+    </div>
+    <div id="result" class="screen">
+      <p id="resultMsg"></p>
+    </div>
+  </main>
+
+  <div id="canvas-container"></div>
+
+  <script src="sketch.js"></script>
+  <script src="controller.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+#canvas-container {
+  display: none;      
+  position: absolute; 
+  left: 50px;         /* 왼쪽에서 50px */
+  top: 100px;         /* 위에서 100px */
+  margin-top: 20px;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+}
+canvas {
+  display: block;
+}
