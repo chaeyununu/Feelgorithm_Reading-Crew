@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
       window.customMood = mood; // p5 전역값 변경
 
       const nameText = userName || "당신";
-      resultMsg.textContent = `${nameText}의 리딩 크루 로고가 완성되었습니다.`;
+      resultMsg.textContent = `${nameText}의 리딩 크루 로고입니다.`;
       showScreen("result");
 
       // 결과 화면에서 위쪽으로 정렬
@@ -72,3 +72,4 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
